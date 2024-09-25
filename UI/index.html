@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Milling Machine Failure Prediction</title>
+    <!-- Include ApexCharts Library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="dashboard-container">
+      <!-- Input Panel -->
+      <div class="input-panel">
+        <h2>Machine Failure Prediction</h2>
+        <form id="inputForm">
+          <label for="airTemp">Air Temperature (K):</label>
+          <input type="number" id="airTemp" required />
+
+          <label for="processTemp">Process Temperature (K):</label>
+          <input type="number" id="processTemp" required />
+
+          <label for="rotationalSpeed">Rotational Speed (rpm):</label>
+          <input type="number" id="rotationalSpeed" required />
+
+          <label for="torque">Torque (Nm):</label>
+          <input type="number" id="torque" required />
+
+          <label for="toolWear">Tool Wear (min):</label>
+          <input type="number" id="toolWear" required />
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="results-panel">
+        <h2>Results & Analytics</h2>
+        <div class="results-status">
+          <div class="status-box">
+            <h3>Status:</h3>
+            <span class="status-box-value" id="status">Normal</span>
+          </div>
+          <div class="status-box">
+            <h3>Failure Probability:</h3>
+            <span class="status-box-value" id="Failure-proba">38%</span>
+          </div>
+          <div class="status-box">
+            <h3>Power:</h3>
+            <span class="status-box-value" id="power">3000W</span>
+          </div>
+          <div class="status-box">
+            <h3>Temperature Diff:</h3>
+            <span class="status-box-value" id="tempDiff">-0.5 K</span>
+          </div>
+        </div>
+
+        <!-- Charts Container -->
+
+        <div id="chartsContainer">
+          <div id="rotationalSpeedVsTorqueChart"></div>
+          <!-- <div id="temperatureTrendsChart"></div> -->
+          <div id="featureImportanceChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
